@@ -1,42 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-        <head>
-            <title>KEISYAENGENE</title>
-            <style>
-                 body {
-                    background-image: url("ENHYPEN 'THE SIN _ VANISH' Still _Stealer_.jpg");
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat : no-repeat;
-                }
+<html>
+    <div class="hearts"></div>
+    <head>
+        <meta name="viewport"
+         content="width=device-width, initial-scale=1.0">
+        <title>sim yeyunnaa</title>
+    
+        <style>
+            .hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
 
-                h1 {
-                 font-family: 'Arial', sans-serif; 
-                    color: white;
-                    text-align: center;
-                    font-size : 40px;
-                }
-            </style>
-        </head>
-                <body>  
+.heart {
+  position: absolute;
+  color: #ff8fcf;
+  animation: fall linear infinite;
+  font-size: 20px;
+}
 
-                <h1>ENHYPEN PCR W</h1>
-                <p style="color: white;">ANJAY WEBSITE BELAJAR GWA NIH SLEBEW AKWKWWK</p>
-                <p style="color: white;">enhypen adalah sebuah grup vokal pria asal korea selatan yang dibentuk oleh belift lab melalui acara survival show I-LAND pada tahun 2020. Grup ini terdiri dari tujuh anggota, yaitu Heeseung, Jay, Jake, Sunghoon, Sunoo, Jungwon, dan Ni-ki. Enhypen debut pada tanggal 30 November 2020 dengan merilis mini album pertama mereka yang berjudul "BORDER: DAY ONE". Sejak debut, enhypen telah meraih banyak prestasi dan popularitas di industri musik korea selatan dan internasional.</p>
-                <p style="color: white;">Grup ini dikenal dengan konsep musik yang unik dan penampilan panggung yang enerjik. Mereka sering menggabungkan berbagai genre musik, seperti pop, hip-hop, dan R&B, dalam lagu-lagu mereka. Selain itu, enhypen juga dikenal dengan koreografi yang kompleks dan penampilan visual yang menarik.</p>
-                <p style="color: white;">Enhypen juga memiliki basis penggemar yang besar dan setia, yang dikenal dengan nama "ENGENE". Penggemar ini sangat mendukung grup dan sering berpartisipasi dalam berbagai kegiatan untuk mendukung karier enhypen, seperti voting untuk penghargaan musik dan membeli album mereka.</p>
-                <p style="color: white;">Secara keseluruhan, enhypen adalah grup vokal pria yang      telah meraih kesuksesan besar ak debut mereka. Dengan bakat, kerja keras, dan dukungan dari penggemar mereka, enhypen terus berkembang dan menjadi salah satu grup vokal pria yang paling populer di dunia musik korea selatan.</p>
-            <h2 style="color: #ffb6ff;">member enhypen:</h2>
-            <ul>
-                <li style="color: white;">Heeseung</li>
-                <li style="color: white;">Jay</li>
-                <li style="color: rgb(235, 21, 146);">Jake(pacarkuini)</li>
-                <li style="color: white;">Sunghoon</li>
-                <li style="color: white;">Sunoo</li>
-                <li style="color: white;">Jungwon(uricuteleader)</li>
-                <li style="color: white;">Ni-ki</li>
-            </ul>
-            <h2 style="color: #ba9fda;">lagu favorit keisyaa :</h2>
-            <p style="color: rgb(203, 217, 248);">SHOUT OUT,HIGHWAY 1009,FATE,NO WAY BACK NOW BGUS BGT BJIR</p>
-        </body>
-    </html>         
+@keyframes fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+            body {
+                margin: 0;
+                font-family: fantasy, sans-serif;
+                background: linear-gradient(135deg, #ffd6ec,#d6f5ff);
+                text-align: center;
+                overflow-x: hidden;
+            }
+            h1 {
+                margin-top: 40px;
+                font-size: 28px;
+                color: #ff7eb9;
+                text-shadow: 0 0 10px #2e1927;
+            }
+            p {
+                color: #555
+            }
+            .character {
+               width: 180px;
+                margin-top: 30px;
+                animation : bounce 2s infinite;
+                border-radius: 20px;
+            }
+            button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: white;
+                background: #ffb3d9;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            button:hover {
+                background-color: #ff8cc6;
+                transform: scale(1.1);
+            }
+            @keyframes bounce {
+                0% {transform: translateY(0);}
+                50% {transform: translateY(-20px);}
+                100% {transform: translateY(0);}
+            }
+        </style>    
+    </head>
+
+    <body>
+        
+    <h1>Pick ur Bias🧸</h1>
+    <p>klik utk liat cwo2 keisya</p>
+
+        <img src="enhypen.jpg" class="character" 
+        id="char">
+        <button id="cutebtn"
+        onclick="changeCharacter()"> Klik aku❄️</button>
+        <script>
+const heartsContainer = document.querySelector(".hearts");
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+
+  heartsContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+
+            const photos = [
+                {name:"ijangg", img: "jungwon pfp.jpg"},
+                {name:"PCR Kesa jir", img: "jake.jpg"},
+                {name:"sunoo", img: "foto3.jpg"},
+                {name:"jay hyung", img: "jay.jpg"},
+                {name:"hoon", img: "hoon.jpg"},
+                {name:"maknae", img: "niki.jpg"},
+                {name: "hyung", img: "download.jpg"},
+            ];          
+              function changeCharacter() {
+                const random = Math.floor(Math.random() * photos.length);
+                document.getElementById("char").src = photos[random].img;
+                document.getElementById("cutebtn").innerText = photos [random].name;
+              }
+              </script>
+    </body>
+</html>
